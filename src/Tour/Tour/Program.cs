@@ -11,33 +11,62 @@ namespace Tour
     {
         public static int Size = 0;
         public static Tours[] tur;
+   
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите целочисленный размер массива");
-            string read = Console.ReadLine();
-            Int32.TryParse(read, out Size);
+            string ase = "";
+            try
+            {
+                Console.WriteLine("Введите целочисленный размер массива");
+                 ase = Console.ReadLine();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+                Int32.TryParse(ase, out Size);
+
             tur = new Tours[Size];
             Console.WriteLine("Длина массива: " + tur.Length);
             for (int i = 0; i < tur.Length; i++)
             {
+               
                 Console.WriteLine("Заполните" + i);
                 tur[i] = new Tours();
-                Console.WriteLine("Введите название поездки");
-                string poezdka = Console.ReadLine();
 
-                tur[i].Poezdka = poezdka;
+                try
+                {
+                    Console.WriteLine("Введите название поездки");
+                    string poezdka = Console.ReadLine();
 
-                Console.WriteLine("Введите продолжительность поездки");
-                string prodol = Console.ReadLine();
+                    tur[i].Poezdka = poezdka;
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                try
+                {
+                    Console.WriteLine("Введите продолжительность поездки");
+                    string prodol = Console.ReadLine();
+                    tur[i].Prodol = prodol;
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
 
-
-                tur[i].Prodol = prodol;
-
-                Console.WriteLine("Введите цену");
-                string price = Console.ReadLine();
-
-
-                tur[i].Price = price;
+                try
+                {
+                    Console.WriteLine("Введите цену");
+                    string price = Console.ReadLine();
+                    tur[i].Price = price;
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
 
             Order();
