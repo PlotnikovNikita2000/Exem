@@ -9,17 +9,18 @@ namespace Tour
 {
     class Program
     {
-        public static int arrSize = 0;
+        public static int Size = 0;
         public static Tours[] tur;
         static void Main(string[] args)
         {
             Console.WriteLine("Введите целочисленный размер массива");
             string read = Console.ReadLine();
-            tur = new Tours[arrSize];
+            Int32.TryParse(read, out Size);
+            tur = new Tours[Size];
             Console.WriteLine("Длина массива: " + tur.Length);
             for (int i = 0; i < tur.Length; i++)
             {
-                Console.WriteLine("Заполните элемент массива");
+                Console.WriteLine("Заполните" + i);
                 tur[i] = new Tours();
                 Console.WriteLine("Введите название поездки");
                 string poezdka = Console.ReadLine();
@@ -40,6 +41,7 @@ namespace Tour
             }
 
             Order();
+            Console.ReadKey();
 
             using (StreamWriter sw = new StreamWriter("test.txt"))
             {
