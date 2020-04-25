@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Tour
 {
@@ -38,6 +39,7 @@ namespace Tour
                 tur[i].Price = price;
             }
             Console.WriteLine("Массив");
+
             foreach (Tours b in tur)
             {
                 Console.WriteLine(b.Poezdka);
@@ -46,6 +48,12 @@ namespace Tour
                 Console.WriteLine();
             }
 
+            
+        }
+
+        public void Order()
+        {
+            tur = tur.OrderByDescending(a => a.prodol).ThenByDescending(a => a.price).ToArray();
         }
     }
 
