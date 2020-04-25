@@ -70,6 +70,7 @@ namespace Tour
             }
 
             Order();
+            Console.WriteLine("Массив отсортирован");
             Console.ReadKey();
 
             using (StreamWriter sw = new StreamWriter("test.txt"))
@@ -80,7 +81,9 @@ namespace Tour
                 }
                 sw.Close();
             }
+            Console.WriteLine("Файл записан");
 
+            Console.ReadKey();
         }
 
          static void Order()
