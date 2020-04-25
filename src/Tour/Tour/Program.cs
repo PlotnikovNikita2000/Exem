@@ -17,7 +17,7 @@ namespace Tour
             string ase = "";
             try
             {
-                Console.WriteLine("Введите целочисленный размер массива");
+                Console.WriteLine("Введите размер массива");
                  ase = Console.ReadLine();
             }
             catch(Exception ex)
