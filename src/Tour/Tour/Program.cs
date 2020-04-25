@@ -12,6 +12,8 @@ namespace Tour
         public static Tours[] tur;
         static void Main(string[] args)
         {
+            Console.WriteLine("Введите целочисленный размер массива");
+            string read = Console.ReadLine();
             tur = new Tours[arrSize];
             Console.WriteLine("Длина массива: " + tur.Length);
             for (int i = 0; i < tur.Length; i++)
@@ -45,6 +47,7 @@ namespace Tour
             }
 
         }
+    }
 
         
 }
