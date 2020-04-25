@@ -38,23 +38,26 @@ namespace Tour
 
                 tur[i].Price = price;
             }
-            Console.WriteLine("Массив");
 
-            foreach (Tours b in tur)
+            Order();
+
+            using (StreamWriter sw = new StreamWriter("test.txt"))
             {
-                Console.WriteLine(b.Poezdka);
-                Console.WriteLine(b.Prodol);
-                Console.WriteLine(b.Price);
-                Console.WriteLine();
+                foreach (Tours pp in tur)
+                {
+                    sw.WriteLine(pp.Poezdka + "; " + pp.Prodol + "; " + pp.Price);
+                }
+                sw.Close();
             }
 
-            
         }
 
-        public void Order()
+         static void Order()
         {
             tur = tur.OrderByDescending(a => a.prodol).ThenByDescending(a => a.price).ToArray();
         }
+
+
     }
 
         
